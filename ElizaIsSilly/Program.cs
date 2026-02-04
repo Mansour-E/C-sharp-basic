@@ -14,7 +14,7 @@ namespace ElizaIsSilly
             userInput = Console.ReadLine();
 
 
-            while (userInput.Equals("quit", StringComparison.OrdinalIgnoreCase))
+            while (!userInput.Equals("quit", StringComparison.OrdinalIgnoreCase))
             {
                 
                 userInput = Console.ReadLine();
