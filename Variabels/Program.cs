@@ -10,11 +10,13 @@ namespace Variabels
     {
         static void Main(string[] args)
         {
-            int fistNumber = 2;
-            int secondNumber = 3;
+            Random random = new Random();
+
+            int firstNumber = random.Next(2,10);
+            int secondNumber = random.Next(2, 10); ;
 
             int @class = 1;
-            var sub = 7;
+            var sub = random.Next(2, 10); ;
 
             int answer;
 
@@ -22,7 +24,7 @@ namespace Variabels
 
             Console.WriteLine("Think of a number between 1 and 10" + prompt);
             Console.ReadKey();
-            Console.WriteLine("Multiply your number by " + fistNumber + prompt);
+            Console.WriteLine("Multiply your number by " + firstNumber + prompt);
             Console.ReadKey();
             Console.WriteLine("Now multiply the result by " + secondNumber + prompt);
             Console.ReadKey();
@@ -30,6 +32,9 @@ namespace Variabels
             Console.ReadKey();
             Console.WriteLine("Now subtract " + sub + prompt);
             Console.ReadKey();
+
+            answer = firstNumber * secondNumber - sub;
+            Console.WriteLine("The answer is : " + answer);
 
 
         }
