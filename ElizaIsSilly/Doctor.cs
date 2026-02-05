@@ -123,22 +123,22 @@ namespace ElizaIsSilly
             "Hello. How are you feeling today?");
         }
 
-        public static string response(string userinput)
+        public static string Response(string userInput)
         {
             // check through the matches list, and if there's a match, strip off the match and replace with the response.
             // 
-            // If the response contains %1, replace that with the Remainder of the input string.
-            // Before replacing, change words in the Remainder of the input with the corresponding entry from the reflections dictionary.
-            var output = "";
-            string Remainder = "";
-            for (var index = 0; index < matches.Count; index++)
+            // If the response contains %1, replace that with the remainder of the input string.
+            // Before replacing, change words in the remainder of the input with the corresponding entry from the reflections dictionary.
+            string output = "";
+            string remainder = "";
+            for (int index = 0; index < matches.Count; index++)
             {
                 string match = matches[index];
-                var position = userinput.ToLower().IndexOf(match);
+                int position = userInput.ToLower().IndexOf(match);
                 if (position > -1)
                 {
                     // found a match, delete everything up to the end of the text we found.
-                    string rem = userinput.Remove(0, position + match.Length);
+                    string rem = userInput.Remove(0, position + match.Length);
 
                     // Now replace the reflections: I -> you, etc
                     // We need to split the input into words, to avoid changing eg. me -> you then the same you -> me.
@@ -159,9 +159,9 @@ namespace ElizaIsSilly
                     rem = String.Join(" ", words);
 
                     // Strip leading and trailing spaces.
-                    Remainder = rem.Trim();
+                    remainder = rem.Trim();
 
-                    var randomIndex = random.Next(0, responses[index].Count);
+                    int randomIndex = random.Next(0, responses[index].Count);
                     output = responses[index][randomIndex];
                     break;
                 }
@@ -175,7 +175,7 @@ namespace ElizaIsSilly
             }
 
             // Now substitute the modified input for %1 (if it exists) in the response.
-            output = output.Replace("%1", Remainder);
+            output = output.Replace("%1", remainder);
             return output;
         }
     }

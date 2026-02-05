@@ -18,7 +18,7 @@ namespace ElizaIsSilly
             {
                 
                 userInput = Console.ReadLine();
-                String response = Doctor.response(userInput);
+                String response = Doctor.Response(userInput);
                 Console.WriteLine(response);
             }
         }

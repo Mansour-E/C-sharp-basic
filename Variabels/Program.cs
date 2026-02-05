@@ -18,7 +18,7 @@ namespace Variabels
             int @class = 1;
             var sub = random.Next(2, 10); ;
 
-            int answer;
+            int answer = firstNumber * secondNumber - sub;
 
             string prompt = ". Press ENTER when ready";
 
@@ -33,7 +33,7 @@ namespace Variabels
             Console.WriteLine("Now subtract " + sub + prompt);
             Console.ReadKey();
 
-            answer = firstNumber * secondNumber - sub;
+            
             Console.WriteLine("The answer is : " + answer);
 
 
